@@ -1,0 +1,48 @@
+<br>
+<br>
+
+<div class="mt-4 col-6 offset-2">
+  <div class="card">
+    <div class="card-header"> Reset Password </div>
+    <div class="card-body">
+
+      <form #resetForm=ngForm (ngSubmit)="onSubmit()" >
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" name="Email" required >
+            <span class="alert text-danger" [hidden]="!error.email"> {{error.email}}</span>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password" name="Password" required>
+            <span class="alert text-danger" [hidden]="!error.password"> {{error.password}}</span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-3 col-form-label"> Confirmation</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password" [(ngModel)]="form. password_confirmation" name=" password_confirmation" required>
+            <span class="alert text-danger" [hidden]="!error.password_confirmation"> {{error.password_confirmation}}</span>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12 offset-8 float-right">
+            <button type="submit" class="btn btn-primary" [disabled]="!resetForm.valid">  Reset Password </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
+
+

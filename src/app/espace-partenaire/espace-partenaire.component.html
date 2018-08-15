@@ -1,0 +1,54 @@
+<br>
+<br>
+<br>
+
+
+<div >
+  <a  class=" btn btn-danger" routerLink="login" *ngIf="!loggedIn" >login </a>
+  <a  class=" btn btn-danger"  href="#" (click)="logout($event)" *ngIf="loggedIn ">logout </a>
+  <a  class=" btn btn-danger" routerLink="profile" *ngIf="loggedIn" > Profile </a>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="align-content-center">
+<h3><span style="font-family: times new roman, times, serif;">Appels d’offres / Consultations</span></h3>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <h6>Tableau des Appels d’Offres et Consultations en cours </h6>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th> N </th>
+      <th> Réf</th>
+      <th> Objet </th>
+      <th> Date Limite Reception des Offres </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>01/2018</td>
+      <td>  Soutraitance de l’activité Chargement Dechargement des avion </td>
+      <td>29/01/2018</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> 02/2018 </td>
+      <td>  Acquisition pneumatique et chambre à air pour Matériel Roulant et Servitude </td>
+      <td> 29/01/2018 </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<br>
