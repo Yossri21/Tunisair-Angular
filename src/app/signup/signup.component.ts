@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {JarwisService} from '../services/jarwis.service';
 import {TookenService} from '../tooken.service';
 import {Router} from '@angular/router';
+import {Alert} from 'selenium-webdriver';
+import {SnotifyService} from 'ng-snotify';
 
 
 @Component({
@@ -16,10 +18,11 @@ export class SignupComponent implements OnInit {
     password : null,
     password_confirmation : null
   };
-  constructor(private jarwis: JarwisService , private token: TookenService , private router: Router) { }
+  constructor(private jarwis: JarwisService , private token: TookenService , private router: Router , private Notify: SnotifyService) { }
   public error = [];
   onSubmit() {
     // console.log(this.form);
+    this.Notify.info('Wait...' , { timeout: 2000 });
     return this.jarwis.signup(this.form).subscribe(
      // data => console.log(data),
       data => this.handleResponse(data),
@@ -29,7 +32,8 @@ export class SignupComponent implements OnInit {
 
   handleResponse(data) {
     this.token.handle(data.access_token);
-    this.router.navigateByUrl('/espace-partenaire');
+    this.router.navigateByUrl('/admin/addAccount');
+    this.Notify.success(data.data , { timeout: 0});
   }
 
   handleError(error) {

@@ -30,7 +30,7 @@ const appRoutes: Routes = [
       {path: 'espace-partenaire' , component: EspacePartenaireComponent } ,
       {path: 'contact' , component: ContactComponent},
       {path: 'espace-partenaire/login', component: LoginComponent , canActivate: [BeforeLoginService]},
-      {path: 'signup' , component: SignupComponent , canActivate: [BeforeLoginService]},
+     // {path: 'signup' , component: SignupComponent , canActivate: [BeforeLoginService]},
       {path: 'forgetPasword' , component: ForgetpsdComponent},
       {path: 'espace-partenaire/profile' , component: ProfileComponent , canActivate: [AfterLoginService]},
       {path: 'resetpassword' , component: RequestResetPasswordComponent , canActivate: [BeforeLoginService]}
