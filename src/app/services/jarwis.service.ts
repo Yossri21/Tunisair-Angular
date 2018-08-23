@@ -20,5 +20,8 @@ export class JarwisService {
   getAll() {
     return this.http.get('http://localhost:8000/api/user');
   }
+  getAllreqest() {
+    return this.http.get('http://localhost:8000/api/request');
+  }
 
 }

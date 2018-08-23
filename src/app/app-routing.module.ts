@@ -15,6 +15,7 @@ import {BeforeLoginService} from './before-login.service';
 import {AfterLoginService} from './after-login.service';
 import {RequestResetPasswordComponent} from './request-reset-password/request-reset-password.component';
 import {BasicComponent} from './basic/basic.component';
+import {ClientRequestComponent} from './client-request/client-request.component';
 
 
 const appRoutes: Routes = [
@@ -29,8 +30,9 @@ const appRoutes: Routes = [
       {path: 'centre-de-formation' , component: CentreDeFormationComponent },
       {path: 'espace-partenaire' , component: EspacePartenaireComponent } ,
       {path: 'contact' , component: ContactComponent},
-      {path: 'espace-partenaire/login', component: LoginComponent , canActivate: [BeforeLoginService]},
+      {path: 'client-request/login', component: LoginComponent , canActivate: [BeforeLoginService]},
      // {path: 'signup' , component: SignupComponent , canActivate: [BeforeLoginService]},
+      {path: 'client-request' , component: ClientRequestComponent } ,
       {path: 'forgetPasword' , component: ForgetpsdComponent},
       {path: 'espace-partenaire/profile' , component: ProfileComponent , canActivate: [AfterLoginService]},
       {path: 'resetpassword' , component: RequestResetPasswordComponent , canActivate: [BeforeLoginService]}

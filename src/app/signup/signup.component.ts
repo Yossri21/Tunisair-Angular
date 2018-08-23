@@ -18,7 +18,10 @@ export class SignupComponent implements OnInit {
     password : null,
     password_confirmation : null
   };
-  constructor(private jarwis: JarwisService , private token: TookenService , private router: Router , private Notify: SnotifyService) { }
+  public requestlist = [];
+  public errorr = false ;
+  constructor(private jarwis: JarwisService , private token: TookenService , private router: Router ,
+              private Notify: SnotifyService , private req: JarwisService ) { }
   public error = [];
   onSubmit() {
     // console.log(this.form);
@@ -39,7 +42,24 @@ export class SignupComponent implements OnInit {
   handleError(error) {
     this.error = error.error.errors;
   }
+
+  loadrequest() {
+    this.req.getAllreqest().subscribe(
+      data => this.handleReq(data),
+      err => this.handleErr(err),
+    );
+    }
+    handleReq(data) {
+    this.requestlist = data.requestclient;
+    console.log(data) ;
+    }
+    handleErr(errorr) {
+    this.errorr = true;
+    this.requestlist = [] ;
+    }
   ngOnInit() {
+    this.errorr = false;
+    this.loadrequest();
   }
 
 }

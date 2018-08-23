@@ -13,7 +13,7 @@ const routes: Routes = [
     component: AdminComponent,
     children : [
       {path: 'table' , component: TableComponent},
-      {path: 'addAccount' , component: SignupComponent , canActivate: [AfterLoginService]},
+      {path: 'addAccount' , component: SignupComponent }
     ]
   }
 ];

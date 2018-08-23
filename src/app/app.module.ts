@@ -29,6 +29,8 @@ import { BasicComponent } from './basic/basic.component';
 import { TableComponent } from './admin/table/table.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { ClientRequestComponent } from './client-request/client-request.component';
+import { ClientReqService } from './client-req.service';
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
     BasicComponent,
     TableComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ClientRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
   ],
   providers: [JarwisService, TookenService, AuthService, AfterLoginService, BeforeLoginService ,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
-    SnotifyService ],
+    SnotifyService,
+    ClientReqService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

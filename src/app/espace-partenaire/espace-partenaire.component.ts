@@ -23,7 +23,7 @@ export class EspacePartenaireComponent implements OnInit {
     event.preventDefault();
     this.auth.changeAuthStatus(false);
     this.token.remove();
-    this.router.navigateByUrl('/espace-partenaire/login');
+    this.router.navigateByUrl('client-request/login');
   }
 
 }
