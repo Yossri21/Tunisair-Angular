@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+  <form #updateForm=ngForm (ngSubmit)="travelupdate()" class="cf">
+  <div class="half left cf">
+    <input disabled matInput type='text' id="input-name" placeholder="ID Travel" [(ngModel)]="travel.id_travel" name="travel" required >
+    <input disabled matInput type="number"  placeholder="Number of travelers" [(ngModel)]="travel.numb_travelers" name="numero" required>
+    <input  disabled matInput type="date"  [(ngModel)]="travel.date" name="date" required>
+  </div>
+  <div class="half right cf">
+    <textarea disabled matInput name="message" type="text" id="input-message" [(ngModel)]="travel.remark" name="remark" placeholder="Remarks" required></textarea>
+  </div>
+    <div class="half right cf">
+      <textarea  name="message" type="text" id="statue" [(ngModel)]="travel.statue" name="statue" placeholder="En attende" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-info" [disabled]="!updateForm"> Submit </button>
+
+  </form>

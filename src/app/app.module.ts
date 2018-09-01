@@ -31,6 +31,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { ClientRequestComponent } from './client-request/client-request.component';
 import { ClientReqService } from './client-req.service';
+import { PartnerComponent } from './admin/partner/partner.component';
+import { TravelrequestComponent } from './admin/travelrequest/travelrequest.component';
+import { ModtravelrequestComponent } from './admin/modtravelrequest/modtravelrequest.component';
 
 
 @NgModule({
@@ -53,7 +56,10 @@ import { ClientReqService } from './client-req.service';
     TableComponent,
     NavbarComponent,
     SidebarComponent,
-    ClientRequestComponent
+    ClientRequestComponent,
+    PartnerComponent,
+    TravelrequestComponent,
+    ModtravelrequestComponent
   ],
   imports: [
     BrowserModule,

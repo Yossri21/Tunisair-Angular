@@ -1,0 +1,58 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title"  class="x" > The Request of Travels  </h4>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+            <th>
+              #
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              ID T
+            </th>
+            <th>
+              DATE
+            </th>
+            <th>
+              Numbers
+            </th>
+            <th>
+              Remark
+            </th>
+            <th>
+              Statue
+            </th>
+            <th>
+              Action
+            </th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let req of listreq ; let i = index ">
+              <td> {{ i+1 }}</td>
+              <td> {{ req.user_name }}</td>
+              <td> {{ req.id_travel }}</td>
+              <td> {{ req.date}}</td>
+              <td> {{ req.numb_travelers }}</td>
+              <td> {{ req.remark }}</td>
+              <td> {{req.statue}}</td>
+              <td> <button [routerLink]="['modification' , req.id ]" class="btn btn-info"> Modifier </button></td>
+
+
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

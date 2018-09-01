@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
   }
 
   handleResponse(data) {
+    console.log(data);
+    localStorage.setItem('user', JSON.stringify(data.user));
     this.token.handle(data.access_token);
     this.auth.changeAuthStatus(true);
     this.router.navigateByUrl('/client-request');

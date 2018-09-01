@@ -1,18 +1,98 @@
-<div *ngIf="loggedIn" > Hello world
+<div *ngIf="loggedIn" >
+The User
+  = {{profile}}
 
-<h1>Elegant Contact Form</h1>
-<form class="cf">
+  test = {{tra}}
+
+<h1> Send Request Travel </h1>
+
+
+<form #travelForm=ngForm (ngSubmit)="onSubmittravel()" class="cf">
   <div class="half left cf">
-    <input type="text" id="input-name" placeholder="ID Travel">
-    <input type="number"  placeholder="Number of travelers">
-    <input type="date" >
+    <input type="text" id="input-name" placeholder="ID Travel" [(ngModel)]="travel.id_travel" name="travel" required >
+    <input type="number"  placeholder="Number of travelers" [(ngModel)]="travel.numb_travelers" name="numero" required>
+    <input type="date"  [(ngModel)]="travel.date" name="date" required>
   </div>
   <div class="half right cf">
-    <textarea name="message" type="text" id="input-message" placeholder="Remarks"></textarea>
+    <textarea name="message" type="text" id="input-message" [(ngModel)]="travel.remark" name="remark" placeholder="Remarks" required></textarea>
   </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!travelForm"> Send </button>
 
-  <input type="submit" value="Submit" id="input-submit">
 </form>
+
+
+
+
+<!--  Table  -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div *ngIf="test">
+  hello
+</div>
+
+
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title"  class="x" > Your  Requests of Travels  </h4>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+            <th>
+              #
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              ID T
+            </th>
+            <th>
+              DATE
+            </th>
+            <th>
+              Numbers
+            </th>
+            <th>
+              Remark
+            </th>
+            <th>
+              Statue
+            </th>
+            </thead>
+            <tbody *ngFor="let req of listreq  ; let i = index " >
+            <tr  *ngIf="req.user_id == profile">
+              <td> {{ i+1 }}</td>
+              <td> {{ req.user_name }}</td>
+              <td> {{ req.id_travel }}</td>
+              <td> {{ req.date}}</td>
+              <td> {{ req.numb_travelers }}</td>
+              <td> {{ req.remark }}</td>
+              <td> {{req.statue}}</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
 </div>
 
 <!-- Client Send Request to Have an account -->

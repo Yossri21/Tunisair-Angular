@@ -6,6 +6,9 @@ import {TableComponent} from './admin/table/table.component';
 import {SignupComponent} from './signup/signup.component';
 import {BeforeLoginService} from './before-login.service';
 import {AfterLoginService} from './after-login.service';
+import {PartnerComponent} from './admin/partner/partner.component';
+import {TravelrequestComponent} from './admin/travelrequest/travelrequest.component';
+import {ModtravelrequestComponent} from './admin/modtravelrequest/modtravelrequest.component';
 
 const routes: Routes = [
   {
@@ -13,7 +16,10 @@ const routes: Routes = [
     component: AdminComponent,
     children : [
       {path: 'table' , component: TableComponent},
-      {path: 'addAccount' , component: SignupComponent }
+      {path: 'addAccount' , component: SignupComponent },
+      {path: 'addPartnair' , component: PartnerComponent},
+      {path: 'requesttravel', component: TravelrequestComponent},
+      {path: 'requesttravel/modification/:id' , component: ModtravelrequestComponent}
     ]
   }
 ];

@@ -8,6 +8,7 @@ export class JarwisService {
   signup(data) {
     return this.http.post('http://localhost:8000/api/signup' , data);
   }
+
   login(data) {
     return this.http.post('http://localhost:8000/api/login' , data) ;
   }
