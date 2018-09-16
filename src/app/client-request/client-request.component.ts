@@ -57,14 +57,17 @@ export class ClientRequestComponent implements OnInit {
   ngOnInit() {
     this.auth.authStatus.subscribe(value => this.loggedIn = value) ;
     const x = JSON.parse(localStorage.getItem('user'));
-    this.profile = x.id ;
     console.log(x);
-    console.log(this.profile);
-    if (this.profile === 1 ) {
-      this.test = true ;
+    if(x!==null) {
+      this.profile = x.id ;
+      console.log(x);
+      console.log(this.profile);
+      if (this.profile === 1 ) {
+        this.test = true ;
+      }
+      this.errorr = false ;
+      this.loadrequest() ;
     }
-    this.errorr = false ;
-    this.loadrequest() ;
   }
   onSubmittravel() {
 

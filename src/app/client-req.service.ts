@@ -11,6 +11,9 @@ export class ClientReqService {
   addpartner(data) {
     return this.http.post('http://localhost:8000/api/addPartnaire' , data);
   }
+  getpartner() {
+    return this.http.get('http://localhost:8000/api/partnaire');
+  }
   travel(data) {
     return this.http.post('http://localhost:8000/api/travel' , data);
   }

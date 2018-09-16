@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../auth.service';
 declare var $: any ;
 
 export interface RouteInfo {
@@ -18,9 +19,12 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  public loggedIn: Boolean;
   public menuItems: any[];
+  constructor(private auth: AuthService ) {}
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.auth.authStatus.subscribe(value => this.loggedIn = value);
   }
   isNotMobileMenu() {
     if ($(window).width() > 991) {

@@ -1,6 +1,62 @@
 <br>
 <br>
 <br>
+<br>
+
+<div class="offset-xl-2 col-xl-8 offset-lg-1 col-lg-10 offset-md-1 col-md-12 col-sm-12 col-12 mt30">
+  <form #updateForm=ngForm (ngSubmit)="travelupdate()">
+    <!-- service-form -->
+    <div class="service-form">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb10 ">
+          <h3> Make updates </h3>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <div class="form-group service-form-group">
+            <label class="control-label sr-only" ></label>
+            <input disabled matInput id="travel" type="number" placeholder=" ID of The Travel " class="form-control" [(ngModel)]="travel.id_travel" name="travel" required>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <div class="form-group service-form-group">
+            <label class="control-label sr-only" ></label>
+            <input disabled matInput id="number" type="number" placeholder="Number of travels" class="form-control" [(ngModel)]="travel.numb_travelers" name="numero" required>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <div class="form-group service-form-group">
+            <label class="control-label sr-only" for="date"></label>
+            <input disabled matInput id="date" type="date" placeholder="Date" class="form-control"  [(ngModel)]="travel.date" name="date" required>
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <div class="form-group">
+            <label class="control-label sr-only" for="textareaa"></label>
+            <textarea disabled matInput class="form-control" id="textareaa" rows="3" placeholder="Reamrks" [(ngModel)]="travel.remark" name="remark"></textarea>
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+          <div class="form-group service-form-group">
+            <label class="control-label sr-only" ></label>
+            <input  id="text" type="text" placeholder="En Attends" class="form-control" [(ngModel)]="travel.statue" name="statue" required>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+          <button type="submit" name="singlebutton" class="btn btn-default btn-block mb8"  [disabled]="!updateForm" > Send </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<br>
+<br>
+<br>
+
+<!--
   <form #updateForm=ngForm (ngSubmit)="travelupdate()" class="cf">
   <div class="half left cf">
     <input disabled matInput type='text' id="input-name" placeholder="ID Travel" [(ngModel)]="travel.id_travel" name="travel" required >
@@ -16,3 +72,4 @@
     <button type="submit" class="btn btn-info" [disabled]="!updateForm"> Submit </button>
 
   </form>
+-->

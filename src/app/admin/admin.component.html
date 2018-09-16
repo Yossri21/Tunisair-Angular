@@ -1,6 +1,9 @@
-<div class="float-lg-left sidebar-css">
+<div *ngIf="loggedIn" class="float-lg-left sidebar-css">
 <app-sidebar></app-sidebar>
 </div>
 <div class="container">
 <router-outlet></router-outlet>
+</div>
+<div class="justify-content-center" *ngIf="!loggedIn">
+  <app-loginadmin></app-loginadmin>
 </div>

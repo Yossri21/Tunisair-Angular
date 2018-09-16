@@ -1,24 +1,69 @@
+
 <div *ngIf="loggedIn" >
-The User
-  = {{profile}}
+  <br>
+  <br>
+  <br>
+  <br>
 
-  test = {{tra}}
-
+  <!--
+  <div class="center-block form-group" >
 <h1> Send Request Travel </h1>
 
-
 <form #travelForm=ngForm (ngSubmit)="onSubmittravel()" class="cf">
-  <div class="half left cf">
-    <input type="text" id="input-name" placeholder="ID Travel" [(ngModel)]="travel.id_travel" name="travel" required >
+  <div class="half right cf">
+    <input  type="text" id="input-name" placeholder="ID Travel" [(ngModel)]="travel.id_travel" name="travel" required >
     <input type="number"  placeholder="Number of travelers" [(ngModel)]="travel.numb_travelers" name="numero" required>
     <input type="date"  [(ngModel)]="travel.date" name="date" required>
   </div>
   <div class="half right cf">
     <textarea name="message" type="text" id="input-message" [(ngModel)]="travel.remark" name="remark" placeholder="Remarks" required></textarea>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!travelForm"> Send </button>
+  <button  class="btn-info btn-success" [disabled]="!travelForm"> Send  Request </button>
 
 </form>
+  </div> -->
+
+  <div class="offset-xl-1 col-xl-8 offset-lg-1 col-lg-10 offset-md-1 col-md-12 col-sm-12 col-12 mt30">
+      <form #travelForm=ngForm (ngSubmit)="onSubmittravel()">
+      <!-- service-form -->
+      <div class="service-form">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb10 ">
+            <h3>Send Request Travel</h3>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <div class="form-group service-form-group">
+              <label class="control-label sr-only" for="name"></label>
+              <input id="travel" type="number" placeholder=" ID of The Travel " class="form-control" [(ngModel)]="travel.id_travel" name="travel" required>
+            </div>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <div class="form-group service-form-group">
+              <label class="control-label sr-only" for="email"></label>
+              <input id="number" type="number" placeholder="Number of travels" class="form-control" [(ngModel)]="travel.numb_travelers" name="numero" required>
+            </div>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <div class="form-group service-form-group">
+              <label class="control-label sr-only" for="date"></label>
+              <input id="date" type="date" placeholder="Date" class="form-control"  [(ngModel)]="travel.date" name="date" required>
+            </div>
+          </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+            <div class="form-group">
+              <label class="control-label sr-only" for="textareaa"></label>
+              <textarea class="form-control" id="textareaa" rows="3" placeholder="Reamrks" [(ngModel)]="travel.remark" name="remark"></textarea>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+            <button type="submit" name="singlebutton" class="btn btn-default btn-block mb8"  [disabled]="!travelForm" > Send </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- /.service-form -->
+  </div>
 
 
 
@@ -31,10 +76,6 @@ The User
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-<div *ngIf="test">
-  hello
-</div>
 
 
 <br>
@@ -49,9 +90,6 @@ The User
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-            <th>
-              #
-            </th>
             <th>
               Name
             </th>
@@ -73,7 +111,6 @@ The User
             </thead>
             <tbody *ngFor="let req of listreq  ; let i = index " >
             <tr  *ngIf="req.user_id == profile">
-              <td> {{ i+1 }}</td>
               <td> {{ req.user_name }}</td>
               <td> {{ req.id_travel }}</td>
               <td> {{ req.date}}</td>
@@ -94,6 +131,8 @@ The User
 <br>
 <br>
 </div>
+
+
 
 <!-- Client Send Request to Have an account -->
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->

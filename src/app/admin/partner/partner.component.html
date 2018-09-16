@@ -27,9 +27,6 @@
     <input class="form-control" type="text" id="objet" [(ngModel)]="form.objet" name="objet" required>
   </div>
 </div>
-
-
-
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label">Date Limite </label>
   <div class="col-10">
@@ -55,6 +52,57 @@
 
 </form>
 
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title"  class="x" >Appels d’offres  </h4>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+            <th>
+              #
+            </th>
+            <th>
+              N
+            </th>
+            <th>
+              Ref
+            </th>
+            <th>
+              Objet
+            </th>
+            <th>
+              Date Limite
+            </th>
+            <th>
+             Statue
+            </th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let p of partnerlist ; let i = index ">
+              <td> {{ i+1 }}</td>
+              <td> {{ p.numero }}</td>
+              <td> {{ p.ref }} </td>
+              <td>  {{ p.objet }}</td>
+              <td>  {{ p.datelimite}}</td>
+              <td>  {{ p.statu}}</td>
+
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <br>

@@ -34,6 +34,7 @@ import { ClientReqService } from './client-req.service';
 import { PartnerComponent } from './admin/partner/partner.component';
 import { TravelrequestComponent } from './admin/travelrequest/travelrequest.component';
 import { ModtravelrequestComponent } from './admin/modtravelrequest/modtravelrequest.component';
+import { LoginadminComponent } from './admin/loginadmin/loginadmin.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ModtravelrequestComponent } from './admin/modtravelrequest/modtravelreq
     ClientRequestComponent,
     PartnerComponent,
     TravelrequestComponent,
-    ModtravelrequestComponent
+    ModtravelrequestComponent,
+    LoginadminComponent
   ],
   imports: [
     BrowserModule,
